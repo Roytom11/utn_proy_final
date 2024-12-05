@@ -1,53 +1,49 @@
-import React from "react";
-import { useForm } from "react-hook-form";
+import React, { useState } from 'react'
 import './login.css'
+import { login } from "../../fetching/auth.fetching"
+import { Link, useNavigate } from 'react-router-dom'
 
 const LogIn = () => {
-    const { register, formState: { errors } , handleSubmit} = useForm ("");
-    
-    const onSubmit = (data) => {
+    const [errorText, setErrorText] = useState('')
+    const navigate = useNavigate()
+    const handleSubmit = async (event) =>{
+        try{
+            event.preventDefault()
+            const usuario = {
+                email: event.target.email.value,
+                password: event.target.password.value
+            }
+            console.log(usuario)
+            await login(usuario)
+            setErrorText('')
+            navigate('/home')
+        }
+        catch(error){
+           
+            setErrorText(error.message)
+        }
     }
-
-    return(
-        <main className="contenedorDeContacto2">
-        <form className="form2" onSubmit={handleSubmit (onSubmit)}>
-            <h1 className="contactUs2">Iniciar Sesión</h1>
-
-            <label htmlFor="email" className="letra2"> Correo Electrónico</label>
-            <input type="email" name="correo" id="email"
-            {...register('email', {
-                required:true,
-                maxLength: 320,
-                pattern: /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/ 
-            })}/>
-            {errors.email?.type === 'required' && <p className="font-size">
-            El campo "Correo Electrónico" es obligatorio. </p>} 
-            {errors.email?.type === 'pattern' && <p className="font-size">
-            Verifique que contenga ".com" </p>}
-
-            <label htmlFor="contraseña" className="letra2"> Contraseña </label>
-            <input type="password" name="contraseña" id="password" {...register('contraseña', {
-            required: true,
-            maxLength: 18
-            })}/>
-            
-            {errors.contraseña?.type === 'required' && <p className="font-size">
-            El campo "Contraseña" es obligatorio. </p>}
-
-            {errors.contraseña?.type === 'maxLength' && <p className="font-size">
-            El campo "Contraseña" debe tener menos de 18 caracteres". </p>}
-
-            <span className="contenedor2">
-            <div className="registrarme2">
-            <a className="color2" href="./registrarme">Registrate</a>
+  return (
+    <div>
+        <form onSubmit={handleSubmit}>
+            <div>
+                <label htmlFor="email">Ingrese su email:</label>
+                <input placeholder='roy@gmail.com' id='email' name='email'/>
             </div>
-            <div className="send2">
-            <input type="submit" value="Acceder"/>
+            <div>
+                <label htmlFor="password">Ingrese su contraseña:</label>
+                <input type="text" placeholder='******' id='password' name='password' />
             </div>
-            </span>
+            {
+                errorText 
+                &&
+                <span style={{color: 'red'}}>{errorText}</span>
+            }
+            <span>Si aun no estas registrado, <Link to={'/register'}>registrate</Link></span>
+            <button type='submit'>Iniciar sesion</button>
         </form>
-    </main>
-    );
-};
+    </div>
+  )
+}
 
 export default LogIn;

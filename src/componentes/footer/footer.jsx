@@ -16,7 +16,7 @@ const Footer = () => {
     <Container className="footerContainer">
     <Row>
         <Col sm className="textoPosicion"><h6 className="copyright">MercadoGamer® Todos los derechos reservados. Para consultas, debe comunicarse al numero 0800-127-7428</h6></Col>
-        <Col sm className="textoPosicion2"><h5>Proyecto Final FrontEnd </h5></Col>
+        <Col sm className="textoPosicion2"><h5> Mercado Gamer S.A </h5></Col>
         <Col sm className="links"><h5>Enlaces Utiles</h5>
         <h6>
         </h6>

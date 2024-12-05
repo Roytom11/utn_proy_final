@@ -1,5 +1,6 @@
 import React from 'react';
 import './productos.css';
+import servicio from '../../services/servicio';
 
 function Productos (props) {
   return(
@@ -12,7 +13,7 @@ function Productos (props) {
       />
       <h5 className='contenedorTitulo'>{props.titulo}</h5>
       <p className='contenedorParrafo'>{props.texto}</p>
-      <button className='botonMasInfo'> Comprar </button>
+      <button className='botonMasInfo' onClick={agregarAlCarrito(servicio.product_id)}> Comprar </button>
     </div>
     </div>
   );

@@ -6,8 +6,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Contact from './componentes/contact/contact.js';
 import Menu from './componentes/navbar/navbar.js'; 
 import LogIn from './componentes/login/login.js'
-import AboutUs from './componentes/aboutus/aboutus.js';
 import Registrarme from './componentes/registrarme/registrarme.js';
+import Carrito from './componentes/carrito/carrito.jsx';
 
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
@@ -18,11 +18,11 @@ function App() {
     <BrowserRouter>
     <Menu />
     <Routes>
-      <Route exact path='/' element={<Home  />} />
+      <Route exact path='/' element={<LogIn  />} />
       <Route exact path='/contact' element={<Contact />} />
       <Route exact path='/home' element={<Home />} />
       <Route exact path='/register' element={<LogIn />} />
-      <Route exact path='/aboutUs' element={<AboutUs/>} />
+      <Route exact path='/carrito' element={<Carrito />} />
       <Route exact path='/registrarme' element={<Registrarme/>} />
     </Routes>
     <Footer />
