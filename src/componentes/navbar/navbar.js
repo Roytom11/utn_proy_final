@@ -22,7 +22,7 @@ return (
         <Nav className="me-auto">
           <Nav.Link className="color" href="/home">Inicio</Nav.Link>
           <Nav.Link className="color" href="/contact">Contacto</Nav.Link>
-          <Nav.Link className="color" href="/aboutUs">Carrito</Nav.Link>
+          <Nav.Link className="color" href="/carrito">Carrito</Nav.Link>
           <Nav.Link className="color" href="/register">Iniciar Sesión </Nav.Link>
         </Nav>
       </Navbar.Collapse>
