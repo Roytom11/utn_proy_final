@@ -42,7 +42,7 @@ export const verificarToken = async () =>{
     try{
         const token  = localStorage.getItem('token')
         const headers = new Headers()
-        headers.append('Authorization', token)
+        headers.append('authorization', token)
         const result = await HTTP.GET(URL.URL_API + ROUTE + '/verify-token', headers)
         return result
     }

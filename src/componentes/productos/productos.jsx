@@ -1,8 +1,10 @@
 import React from 'react';
 import './productos.css';
-import servicio from '../../services/servicio';
+import BuyButton from '../BuyButton/BuyButton';
+
 
 function Productos (props) {
+  console.log(props)
   return(
     <div className='contenedorProductos'>
         <div className='contenedorTexto'>
@@ -13,7 +15,7 @@ function Productos (props) {
       />
       <h5 className='contenedorTitulo'>{props.titulo}</h5>
       <p className='contenedorParrafo'>{props.texto}</p>
-      <button className='botonMasInfo' onClick={agregarAlCarrito(servicio.product_id)}> Comprar </button>
+      <BuyButton product={props.product}> </BuyButton>
     </div>
     </div>
   );
