@@ -17,6 +17,7 @@ const Home = () => {
           altImagen = {producto.altImagen}
           titulo= {producto.titulo}    
           texto= {producto.texto}
+          product={producto}
           />
      
     ;

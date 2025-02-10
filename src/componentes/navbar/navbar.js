@@ -18,14 +18,12 @@ return (
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       
       <Navbar.Collapse id="basic-navbar-nav">
-      <span className="moverBuscador">
-      <input className="buscador" type="text" placeholder="Busca un producto..."></input>
-      </span>
+
         <Nav className="me-auto">
-          <Nav.Link className="color" href="/">Inicio</Nav.Link>
+          <Nav.Link className="color" href="/home">Inicio</Nav.Link>
           <Nav.Link className="color" href="/contact">Contacto</Nav.Link>
-          <Nav.Link className="color" href="/aboutUs">Nosotros</Nav.Link>
-          <Nav.Link className="color" href="/register"> Iniciar Sesión </Nav.Link>
+          <Nav.Link className="color" href="/carrito">Carrito</Nav.Link>
+          <Nav.Link className="color" href="/register">Iniciar Sesión </Nav.Link>
         </Nav>
       </Navbar.Collapse>
       </div>
