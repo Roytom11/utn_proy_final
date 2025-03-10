@@ -1,0 +1,98 @@
+
+
+
+
+.botonMasInfo {
+    min-width: 130px;
+    height: 40px;
+    color: 
+  #fff;
+    padding: 5px 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    outline: none;
+    border-radius: 5px;
+    z-index: 0;
+    background: 
+  #fff;
+    overflow: hidden;
+    border: 1px solid
+  chocolate;
+    color: 
+  chocolate;
+  margin:0.3em 0.5em 1em 0.5em;
+  }
+
+  .botonSumar {
+    min-width: 40px;
+    height: 40px;
+    color: 
+  #fff;
+    padding: 5px 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    outline: none;
+    border-radius: 5px;
+    z-index: 0;
+    background: 
+  #fff;
+    overflow: hidden;
+    border: 1px solid
+  chocolate;
+    color: 
+  chocolate;
+  margin:0.3em 0.5em 1em 0.5em;
+  }
+
+
+  .botonQuitar{
+        min-width: 400px;
+        height: 40px;
+        color: 
+      #fff;
+        padding: 5px 10px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        position: relative;
+        display: inline-block;
+        outline: none;
+        border-radius: 5px;
+        z-index: 0;
+        background: 
+      #fff;
+        overflow: hidden;
+        border: 1px solid
+      chocolate;
+        color: 
+      chocolate;
+      margin:0.3em 0.5em 1em 0.5em;
+      }
+  }
+  
+  .botonMasInfo:hover {
+    color: 
+  #fff;
+  }
+  
+  .botonMasInfo:hover:after {
+    width: 100%;
+  }
+  
+  .botonMasInfo:after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    transition: all 0.3s ease;
+    right: 0;
+    top: 0;
+    width: 0;
+    height: 100%;
+    background: chocolate;
+  }
