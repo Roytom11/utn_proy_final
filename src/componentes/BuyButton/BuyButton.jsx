@@ -4,22 +4,21 @@ import { useGlobalContext } from '../../context/GlobalContext'
 
 
 const BuyButton = ({product}) => {
-    /* STATE MANAGER */
+   
     const  {agregarAlCarrito}  = useGlobalContext()
     const [counter, setCounter] = useState(0)
     
         const [compraConfirmada, setCompraConfirmada] = useState(false);
 
-        const comprar = () => {
-            if (counter < product.stock) {
-                setCounter(prevCounter => {
-                    const nuevoCounter = prevCounter + 1;
-                    console.log("Nuevo contador:", nuevoCounter);
-                    agregarAlCarrito(product, 1); // Se suma 1 al carrito
-                    return nuevoCounter;
-                });
-            }
-        };
+    const comprar = () =>{
+    
+        if (counter < product.stock) {
+            setCounter(prevCounter => prevCounter + 1);
+            //agregarAlCarrito(product, counter)
+        }
+       
+        
+    }
     const quitar = () =>{
         if(counter !== 0){
             setCounter(prevCounter => prevCounter - 1)
@@ -37,6 +36,8 @@ const BuyButton = ({product}) => {
             setCompraConfirmada(true);
         }
     };
+
+  
 
   return (
     <>

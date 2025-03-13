@@ -1,20 +1,19 @@
-import "../carrito/carrito.css"
-import React from 'react'
-import { useGlobalContext } from '../../context/GlobalContext'
-import Productos from "../productos/productos"
-import { useEffect } from "react";
-  
-
+import "../carrito/carrito.css";
+import React, { useState, useEffect } from "react";
+import { useGlobalContext } from "../../context/GlobalContext";
+import Productos from "../productos/productos";
 
 const Carrito = () => {
   const { carrito } = useGlobalContext();
-  
+  const [render, setRender] = useState(false); 
 
   useEffect(() => {
-    console.log("Carrito actualizado en Carrito.js:", carrito);
-}, [carrito]);
- 
-  
+    console.log(" Carrito actualizado en Carrito.js:", carrito);
+    setRender(prev => !prev); 
+  }, [carrito]);
+
+  console.log(" Estado inicial de carrito en Carrito.js:", carrito);
+
   return (
     <div className="carrito">
       <h2>🛒 Carrito de Compras</h2>
@@ -23,29 +22,26 @@ const Carrito = () => {
       ) : (
         carrito.map((producto, index) => (
           <div key={index} className="carrito-item">
-            
             <Productos
-            key= {index}
-            imagen= {producto.imagen}
-            altImagen = {producto.altImagen}
-            titulo= {producto.titulo}    
-            texto= {producto.texto}
-            product={producto}
+              imagen={producto.imagen}
+              altImagen={producto.altImagen}
+              titulo={producto.titulo}
+              texto={producto.texto}
+              product={producto}
             />
             <div className="carrito-detalles">
               <h5>{producto.titulo}</h5>
               <p>{producto.texto}</p>
-              <p><strong>Cantidad:</strong> {producto.cantidad}</p>
+              <p>
+                <strong>Cantidad:</strong> {producto.cantidad}
+              </p>
             </div>
           </div>
         ))
       )}
     </div>
-    
-    
   );
 };
-
 
 export default Carrito;
 //   return (

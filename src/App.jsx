@@ -15,8 +15,7 @@ import { GlobalProvider } from "./context/GlobalContext";
 
 function App() {
   return (
-    <GlobalProvider>
-      {console.log("🚀 GlobalProvider montado")}
+    <GlobalProvider>   
       <BrowserRouter>
         <Menu />
         <Routes>
